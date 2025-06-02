@@ -1,0 +1,10 @@
+You are selecting a database for a new application. 
+You have the following requirements:
+Social platform with millions of users
+Need to store profiles, posts, and connections between users
+High data read speed required
+Expected 80% read operations, 20% write operations
+Scalability is important as the user base grows
+
+Pick the most suitable database for the listed requirements
+First, explain the reasoning process. Then provide the final answer.

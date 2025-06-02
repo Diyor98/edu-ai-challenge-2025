@@ -1,0 +1,36 @@
+Reasoning Process (step-by-step)
+Candidate	Strengths vs. Requirements	Weaknesses
+Relational DB (PostgreSQL/MySQL)	Mature, ACID, simple for profiles & posts	JOIN-heavy social-graph queries become slow; sharding & replication at “millions-of-users” scale is operationally complex
+Document DB (MongoDB)	Flexible JSON docs for profiles & posts, built-in sharding for horizontal scale, good read performance	Poor at deep/variable-length friendship-graph traversals; manual workarounds or separate graph engine needed
+Graph DB (Neo4j, Amazon Neptune)	Natural fit for user-to-user connections and “friends-of-friends” queries; index-free adjacency gives fast traversals	Pure graph stores can struggle with very high write throughput on posts and huge “timeline” reads; operational scale still capped by memory-heavy graph storage
+Wide-column / Key-value (Apache Cassandra, Amazon DynamoDB)	Linearly scalable on commodity hardware, single-digit-ms reads, tunable consistency, write-optimized yet still excellent read throughput; proven for feeds/timelines at Facebook, Instagram, Twitter-like workloads	Not a “native” graph—requires explicit table designs (adjacency-list pattern) for connections; more modelling discipline needed
+
+Mapping the workload
+
+Data Type	Access Pattern	Fit in Cassandra-style model
+Profiles	Point read by userId, occasional update	Primary-key row; fast
+Posts	Feed reads by userId & timestamp, bulk writes	Partition key = authorId, clustering = createdAt → sequential appends & ordered range reads
+Connections	Small adjacency list per user (followings/followers) queried by userId; occasional edge add/remove	Store each edge twice (u→v, v→u) in a “edges” table; point reads scale linearly
+
+With ~80 % reads, low-latency requirements, and the need to add more nodes seamlessly as the user base grows, a wide-column store such as Apache Cassandra (or a managed equivalent like Amazon DynamoDB) best satisfies all constraints:
+
+Horizontal scalability – add nodes, rebalance automatically.
+
+High read throughput – sequential SSTable reads, row cache, and replication-factor tuning.
+
+Acceptable write speed – log-structured storage, commit-log + memtable → SSTable.
+
+Flexible consistency – can pick ONE for fastest reads or QUORUM for stronger guarantees.
+
+Proven at social-scale – used for timelines, messaging, and notification systems at internet-scale companies.
+
+Graph use-cases (e.g., “friends‐of‐friends people-you-may-know”) can be layered as an offline Spark/GraphX job or handled by a smaller, specialized graph engine fed from Cassandra, but the primary online store that must serve 99 % of traffic should be Cassandra-class.
+
+Final Answer
+Choose Apache Cassandra (or a managed wide-column derivative like Amazon DynamoDB) as the main database. It delivers the required high read speed, simple linear scalability to many millions of users, and balanced performance for an 80 % read / 20 % write social-platform workload while accommodating profiles, posts, and user-connection data effectively.
+
+
+
+
+
+
