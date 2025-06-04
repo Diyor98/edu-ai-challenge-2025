@@ -1,0 +1,9 @@
+You are given a text.
+Generate a concise summary of the input text.
+Analyze the sentiment and classify it as positive, neutral, or negative. It should satisfy the following requirements:
+Positive: Reflecting optimism or satisfaction.
+Neutral: Lacking strong emotional indicators.
+Negative: Reflecting dissatisfaction, criticism, or pessimism.
+Also, provide a sentiment score, the score can by any number between -1 and 1, where -1 for very negative, 0 for neutral, +1 for very positive.
+
+The output should in JSON format with the fields summary, sentiment, and sentiment_score
