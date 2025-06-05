@@ -1,0 +1,2 @@
+Take the provided code snippet as input.
+Analyze it and provide specific, actionable recommendations and observations to improve the code from the the perspective of an Experienced Developer,  a Security Engineer,  a Performance Specialist.
