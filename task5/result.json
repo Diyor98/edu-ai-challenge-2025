@@ -1,0 +1,35 @@
+[
+	{
+		"sentiment": "Negative",
+		"isRelevant": true,
+		"mainSubject": "Tracking reliability and hardware issues",
+		"positives": [],
+		"painPoints": [
+			"Sensor intermittently stops tracking even at 8000Hz",
+			"Same issue persists when plugged in",
+			"Initial unit had a defective dongle",
+			"High cost not justified by quality"
+		],
+		"improvementSuggestions": [
+			"Improve sensor stability and tracking reliability",
+			"Ensure dongle functionality during QA",
+			"Align pricing with hardware reliability"
+		],
+		"featuresMentioned": ["Sensor", "Tracking frequency", "Dongle", "Price"],
+		"userExpertise": "Experienced"
+	},
+	{
+		"sentiment": "Mixed",
+		"isRelevant": true,
+		"mainSubject": "Value for money despite flawlessness",
+		"positives": ["No flaws in product performance"],
+		"painPoints": [
+			"High price not justified by real-world performance advantage"
+		],
+		"improvementSuggestions": [
+			"Consider price reduction or improved value proposition"
+		],
+		"featuresMentioned": ["Performance", "Price"],
+		"userExpertise": "Experienced"
+	}
+]
