@@ -1,0 +1,22 @@
+{
+	"name": "task6",
+	"version": "1.0.0",
+	"description": "Enigma Machine Implementation with Bug Fixes",
+	"main": "enigma.js",
+	"scripts": {
+		"test": "node enigma.test.js",
+		"test:coverage": "nyc --reporter=text --reporter=html node enigma.test.js",
+		"coverage": "nyc report --reporter=text"
+	},
+	"keywords": [
+		"enigma",
+		"encryption",
+		"cipher",
+		"cryptography"
+	],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"nyc": "^15.1.0"
+	}
+}
