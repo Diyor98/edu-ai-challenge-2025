@@ -1,0 +1,33 @@
+
+> sea-battle@1.0.0 test:coverage
+> node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage
+
+(node:63474) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS __tests__/ShipPlacer.test.js
+PASS __tests__/GameController.test.js
+PASS __tests__/Ship.test.js
+PASS __tests__/CpuPlayer.test.js
+PASS __tests__/Board.test.js
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |   70.28 |    69.13 |   83.07 |    69.4 |                   
+ src                |       0 |        0 |       0 |       0 |                   
+  SeaBattleApp.js   |       0 |        0 |       0 |       0 | 10-260            
+ src/ai             |   98.27 |    93.54 |     100 |   98.21 |                   
+  CpuPlayer.js      |   98.27 |    93.54 |     100 |   98.21 | 96                
+ src/game           |     100 |      100 |     100 |     100 |                   
+  GameController.js |     100 |      100 |     100 |     100 |                   
+ src/models         |     100 |     90.9 |     100 |     100 |                   
+  Board.js          |     100 |    86.66 |     100 |     100 | 32,59             
+  Ship.js           |     100 |      100 |     100 |     100 |                   
+ src/utils          |   97.14 |    82.35 |     100 |   97.05 |                   
+  ShipPlacer.js     |   97.14 |    82.35 |     100 |   97.05 | 32                
+--------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 5 passed, 5 total
+Tests:       127 passed, 127 total
+Snapshots:   0 total
+Time:        0.775 s, estimated 1 s
+Ran all test suites.

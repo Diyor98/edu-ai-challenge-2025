@@ -1,0 +1,24 @@
+{
+	"name": "sea-battle",
+	"version": "1.0.0",
+	"description": "Modern Sea Battle game implementation",
+	"main": "src/index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node src/index.js",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+		"test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+		"test:watch": "jest --watch"
+	},
+	"keywords": [
+		"battleship",
+		"game",
+		"javascript",
+		"es6"
+	],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"jest": "^29.7.0"
+	}
+}
