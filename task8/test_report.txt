@@ -1,0 +1,20 @@
+  NumberValidator.ts  |     100 |      100 |     100 |     100 |                                                   
+  ObjectValidator.ts  |   90.82 |    96.55 |   84.61 |   90.74 | 111-116,240-250                                   
+  StringValidator.ts  |     100 |      100 |     100 |     100 |                                                   
+----------------------|---------|----------|---------|---------|---------------------------------------------------
+
+=============================== Coverage summary ===============================
+Statements   : 75.8% ( 379/500 )
+Branches     : 64.97% ( 115/177 )
+Functions    : 70.43% ( 81/115 )
+Lines        : 75.95% ( 376/495 )
+================================================================================
+Jest: "global" coverage threshold for statements (80%) not met: 75.8%
+Jest: "global" coverage threshold for branches (80%) not met: 64.97%
+Jest: "global" coverage threshold for lines (80%) not met: 75.95%
+Jest: "global" coverage threshold for functions (80%) not met: 70.43%
+Test Suites: 3 failed, 1 passed, 4 total
+Tests:       7 failed, 63 passed, 70 total
+Snapshots:   0 total
+Time:        2.936 s, estimated 3 s
+Ran all test suites.
