@@ -1,0 +1,32 @@
+{
+	"name": "service-analyzer",
+	"version": "1.0.0",
+	"description": "A console application that analyzes services and generates comprehensive markdown reports",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"start": "node dist/index.js",
+		"dev": "ts-node index.ts",
+		"clean": "rm -rf dist"
+	},
+	"keywords": [
+		"service-analysis",
+		"ai",
+		"openai",
+		"console-app"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {
+		"openai": "^4.20.1",
+		"dotenv": "^16.3.1",
+		"chalk": "^4.1.2",
+		"inquirer": "^8.2.6"
+	},
+	"devDependencies": {
+		"@types/node": "^20.8.0",
+		"@types/inquirer": "^8.2.10",
+		"typescript": "^5.2.2",
+		"ts-node": "^10.9.1"
+	}
+}
