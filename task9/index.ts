@@ -60,9 +60,20 @@ Please provide a comprehensive analysis covering exactly these 8 sections:
 7. **Perceived Strengths**: Positive aspects and standout features
 8. **Perceived Weaknesses**: Drawbacks, limitations, or areas for improvement
 
-Format your response as JSON with these exact keys: briefHistory, targetAudience, coreFeatures, uniqueSellingPoints, businessModel, techStackInsights, perceivedStrengths, perceivedWeaknesses
+CRITICAL: Your response must be ONLY valid JSON. No explanations, no markdown, no additional text. Just this JSON structure:
 
-Each value should be a detailed paragraph (2-4 sentences) providing substantive analysis.`;
+{
+  "briefHistory": "your detailed analysis here",
+  "targetAudience": "your detailed analysis here", 
+  "coreFeatures": "your detailed analysis here",
+  "uniqueSellingPoints": "your detailed analysis here",
+  "businessModel": "your detailed analysis here",
+  "techStackInsights": "your detailed analysis here",
+  "perceivedStrengths": "your detailed analysis here",
+  "perceivedWeaknesses": "your detailed analysis here"
+}
+
+Each value should be a detailed paragraph (2-4 sentences). Escape any quotes in your text properly.`;
 
 		return basePrompt;
 	}
@@ -138,7 +149,7 @@ ${analysis.perceivedWeaknesses}
 			const prompt = this.createAnalysisPrompt(input, isServiceName);
 
 			const completion = await this.openai.chat.completions.create({
-				model: 'gpt-3.5-turbo',
+				model: 'gpt-4.1-mini',
 				messages: [
 					{
 						role: 'user',
@@ -161,6 +172,9 @@ ${analysis.perceivedWeaknesses}
 				analysis = JSON.parse(responseContent);
 			} catch (parseError) {
 				console.error(chalk.red('❌ Error parsing AI response as JSON'));
+				console.error(chalk.yellow('Raw AI response:'));
+				console.error(chalk.gray(responseContent));
+				console.error(chalk.yellow('Parse error:'), parseError);
 				throw new Error('Invalid JSON response from AI');
 			}
 

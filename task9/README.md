@@ -5,7 +5,7 @@ A lightweight console application that analyzes digital services and generates c
 ## 🚀 Features
 
 - **Dual Input Mode**: Analyze either known service names (e.g., "Spotify", "Notion") or raw service description text
-- **AI-Powered Analysis**: Uses OpenAI's GPT-3.5-turbo for intelligent service analysis
+- **AI-Powered Analysis**: Uses OpenAI's GPT-4o-mini for intelligent service analysis
 - **Comprehensive Reports**: Generates structured markdown reports with 8 key sections
 - **Interactive Interface**: User-friendly prompts with input validation
 - **File Export**: Option to save reports as markdown files
@@ -186,7 +186,7 @@ task9/
 4. **OpenAI API errors**
 
    - Check your API key is valid and has sufficient credits
-   - Ensure you have access to the GPT-3.5-turbo model
+   - Ensure you have access to the GPT-4o-mini model
 
 5. **Editor not opening for description input**
    - Ensure you have a default text editor set in your system
@@ -205,7 +205,7 @@ If you encounter issues:
 
 Each analysis typically uses:
 
-- **Model**: GPT-3.5-turbo
+- **Model**: GPT-4o-mini
 - **Tokens**: ~1,000-2,000 per request
 - **Cost**: Approximately $0.002-$0.004 per analysis (as of 2024)
 
