@@ -1,0 +1,27 @@
+{
+	"word_count": 982,
+	"speaking_speed_wpm": 432,
+	"audio_duration_minutes": 2.3,
+	"frequently_mentioned_topics": [
+		{
+			"topic": "Okay",
+			"mentions": 27
+		},
+		{
+			"topic": "Pain",
+			"mentions": 14
+		},
+		{
+			"topic": "Right",
+			"mentions": 13
+		},
+		{
+			"topic": "Yeah",
+			"mentions": 12
+		},
+		{
+			"topic": "Like",
+			"mentions": 9
+		}
+	]
+}
